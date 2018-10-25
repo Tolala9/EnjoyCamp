@@ -10,6 +10,7 @@ mongoose.connect("mongodb://localhost:27017/enjoy_camp", { useNewUrlParser: true
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");  
 seedDB();
+app.use(express.static(__dirname + "/public"));
 // mongoose.set("useFindAndModify", false);
 
 // // SCHEMA SETUP in models/campground.js
