@@ -17,6 +17,19 @@ seedDB();
 app.use(express.static(__dirname + "/public"));
 // mongoose.set("useFindAndModify", false);
 
+// PASSPORT CONFIGURATION
+app.use(require("express-session")({
+    secret: "I'm secret",
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
 // // SCHEMA SETUP in models/campground.js
 // var campgroundSchema =  new mongoose.Schema({
 //     name: String,
@@ -158,6 +171,29 @@ app.post("/campgrounds/:id/comments", function(req, res){
     //create new comments
     //connect new comments to campground
 });
+
+//========================================
+// AUTH ROUTES
+//========================================
+// show register form
+app.get("/register", function(req, res) {
+    res.render("register");
+})
+// sign up logic
+app.post("/register", function(req, res) {
+    var newUser = new User({username: req.body.username})
+    User.register(newUser, req.body.password, function(err, user){
+        if(err){
+            console.log(err);
+            return res.render("register");
+        } 
+        passport.authenticate("local")(req, res, function () {
+            res.redirect("/campgrounds");
+        });
+        
+     });
+})
+
 
 app.listen(process.env.PORT, process.env.IP, function() {
     console.log("The EnjoyCamp server has been started!");
