@@ -1,10 +1,14 @@
-var express         = require("express"),
-    app             = express(),
-    bodyParser      = require("body-parser"),
-    mongoose        = require("mongoose"),
-    Campground      = require("./models/campground"),
-    Comment         = require("./models/comment"),
-    seedDB          = require("./seeds");
+var express                 = require("express"),
+    app                     = express(),
+    bodyParser              = require("body-parser"),
+    mongoose                = require("mongoose"),
+    Campground              = require("./models/campground"),
+    Comment                 = require("./models/comment"),
+    seedDB                  = require("./seeds"),
+    passport                = require("passport"),
+    LocalStrategy           = require("passport-local"),
+    passportLocalMongoose   = require("passport-local-mongoose"),
+    User                    = require("./models/user");
 
 mongoose.connect("mongodb://localhost:27017/enjoy_camp", { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({extended: true}));
