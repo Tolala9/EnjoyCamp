@@ -178,10 +178,10 @@ app.post("/campgrounds/:id/comments", function(req, res){
 // show register form
 app.get("/register", function(req, res) {
     res.render("register");
-})
+});
 // sign up logic
 app.post("/register", function(req, res) {
-    var newUser = new User({username: req.body.username})
+    var newUser = new User({username: req.body.username});
     User.register(newUser, req.body.password, function(err, user){
         if(err){
             console.log(err);
@@ -192,8 +192,20 @@ app.post("/register", function(req, res) {
         });
         
      });
-})
+});
 
+// show login form
+app.get("/login", function(req, res) {
+    res.render("login");
+});
+
+// login logic
+app.post("/login", passport.authenticate("local", {
+    successRedirect: "/campgrounds",
+    failureRedirect: "/login"
+}) , function (req, res) {
+    
+});
 
 app.listen(process.env.PORT, process.env.IP, function() {
     console.log("The EnjoyCamp server has been started!");
