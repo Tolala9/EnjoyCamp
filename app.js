@@ -30,6 +30,11 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
+app.use(function (req, res, next) {
+    res.locals.currentUser =req.user;
+    next();
+})
+
 // // SCHEMA SETUP in models/campground.js
 // var campgroundSchema =  new mongoose.Schema({
 //     name: String,
@@ -78,6 +83,7 @@ app.get("/", function(req, res) {
 
 // INDEX - show all campgrounds
 app.get("/campgrounds", function (req, res) {
+    
     //get all campgrounds from DB
     Campground.find({}, function (err, allCampgrounds) {
         if(err) {
@@ -149,7 +155,7 @@ app.get("/campgrounds/:id/comments/new", isLoggedIn, function(req, res) {
    
 });
 
-app.post("/campgrounds/:id/comments", function(req, res){
+app.post("/campgrounds/:id/comments", isLoggedIn, function(req, res){
    //lookup campground using ID
    Campground.findById(req.params.id, function(err, campground){
        if(err){
