@@ -9,7 +9,8 @@ var express                 = require("express"),
     LocalStrategy           = require("passport-local"),
     passportLocalMongoose   = require("passport-local-mongoose"),
     User                    = require("./models/user");
-    
+
+// requring routes    
 var campgroundRoutes        = require("./routes/campgrounds"),
     commentRoutes           = require("./routes/comments"),
     indexRoutes             = require("./routes/index");
@@ -17,9 +18,9 @@ var campgroundRoutes        = require("./routes/campgrounds"),
 mongoose.connect("mongodb://localhost:27017/enjoy_camp", { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");  
-seedDB();
 app.use(express.static(__dirname + "/public"));
 // mongoose.set("useFindAndModify", false);
+// seedDB(); // seed the database
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
