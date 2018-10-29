@@ -2,13 +2,14 @@ var express                 = require("express"),
     app                     = express(),
     bodyParser              = require("body-parser"),
     mongoose                = require("mongoose"),
-    Campground              = require("./models/campground"),
-    Comment                 = require("./models/comment"),
-    seedDB                  = require("./seeds"),
     passport                = require("passport"),
     LocalStrategy           = require("passport-local"),
     passportLocalMongoose   = require("passport-local-mongoose"),
-    User                    = require("./models/user");
+    methodOverride          = require("method-override"),
+    User                    = require("./models/user"),
+    Campground              = require("./models/campground"),
+    Comment                 = require("./models/comment"),
+    seedDB                  = require("./seeds");
 
 // requring routes    
 var campgroundRoutes        = require("./routes/campgrounds"),
@@ -19,7 +20,9 @@ mongoose.connect("mongodb://localhost:27017/enjoy_camp", { useNewUrlParser: true
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");  
 app.use(express.static(__dirname + "/public"));
+app.use(methodOverride("_method"));
 // mongoose.set("useFindAndModify", false);
+
 // seedDB(); // seed the database
 
 // PASSPORT CONFIGURATION
