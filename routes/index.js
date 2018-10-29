@@ -3,16 +3,16 @@ var router              = express.Router();
 var passport            = require("passport");
 var User                = require("../models/user");
 
-
+// roote route
 router.get("/", function(req, res) {
     res.render("landing");
 });
 
-
-
+// register form
 router.get("/register", function(req, res) {
     res.render("register");
 });
+
 // sign up logic
 router.post("/register", function(req, res) {
     var newUser = new User({username: req.body.username});
@@ -47,6 +47,8 @@ router.get("/logout", function(req, res) {
     res.redirect("/campgrounds");
 });
 
+
+// middleware
 function isLoggedIn(req, res, next) {
     if(req.isAuthenticated()){
         return next();
