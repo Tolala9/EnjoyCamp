@@ -4,7 +4,7 @@ var Campground          = require("../models/campground");
 
 //change app. to router.
 
-//show all campgrounds
+//SHOW all campgrounds
 router.get("/", function (req, res) {
     
     //get all campgrounds from DB
@@ -87,7 +87,18 @@ router.put("/:id", function (req, res) {
       } else {
           res.redirect("/campgrounds/" + req.params.id);
       }
-   })
+   });
+});
+
+// DELETE campground route
+router.delete("/:id", function (req, res) {
+   Campground.findByIdAndRemove(req.params.id, function(err){
+       if(err) {
+           res.redirect("/campgrounds");
+       } else {
+           res.redirect("/campgrounds");
+       }
+   });
 });
 
 // Middleware
