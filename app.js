@@ -20,8 +20,8 @@ var campgroundRoutes        = require("./routes/campgrounds"),
 
 var url = process.env.DATABASEURL || "mongodb://localhost:27017/enjoy_camp"
 mongoose.connect(url, { useNewUrlParser: true });
-// mongoose.connect("mongodb://localhost:27017/enjoy_camp", { useNewUrlParser: true });
-// mongoose.connect("mongodb://tolala:tolala333@ds041377.mlab.com:41377/enjoy_camp", { useNewUrlParser: true });
+// mongoose.connect("mongodb://localhost:27017/enjoy_camp", { useNewUrlParser: true }); //for deleting
+// mongoose.connect("mongodb://tolala:tolala333@ds041377.mlab.com:41377/enjoy_camp", { useNewUrlParser: true }); //for deleting
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");  
