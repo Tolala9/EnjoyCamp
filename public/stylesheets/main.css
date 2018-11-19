@@ -12,3 +12,8 @@
 #delete-form {
     display: inline-block;
 }
+
+#map {
+    height: 400px;   
+    width: 100%;
+}
