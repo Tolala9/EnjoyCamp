@@ -9,7 +9,7 @@ The project is made on Node.js platform using Express.js framework. I practiced 
 
 ### View the project
 
- [![N|Solid](https://i.ibb.co/XbyGXQd/readme-site-buttons-enjoycamp-03.png)](http://enjoycamp.000webhostapp.com) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ [![N|Solid](https://i.ibb.co/XbyGXQd/readme-site-buttons-enjoycamp-03.png)](https://tranquil-forest-29916.herokuapp.com/) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Some site content & features
 
@@ -32,12 +32,13 @@ The project is made on Node.js platform using Express.js framework. I practiced 
 - [x] CSS3, Bootstrap; 
 - [x] Node.js, NPM, 
 - [x] Express.js, MongoDB, Mongoose;
-- [x] Passport.js, Google Maps API.
+- [x] Passport.js, Google Maps API;
+- [x] Heroku, mLab.
 
 
 ### Author contacts
 ---
- [![N|Solid](https://image.ibb.co/kxmx5T/facebook_icon_2.png)](https://www.facebook.com/profile.php?id=100004768836692) &nbsp; &nbsp; [![N|Solid](https://image.ibb.co/gjgmzo/linkedin_icon_2.png)](https://www.linkedin.com/in/anatolii-lukavenko/) &nbsp; &nbsp; [![N|Solid](https://image.ibb.co/hsM8C8/cv_icon_2.png)](https://luancv.000webhostapp.com/) &nbsp; &nbsp; [![N|Solid](https://image.ibb.co/cw7UkT/mail_icon_2.png)](Anatolii.lukavenko@gmail.com)&nbsp; &nbsp; [![N|Solid](https://i.ibb.co/YLnMgNr/blog.png)](https://blogluan.000webhostapp.com/)  
+ [![N|Solid](https://image.ibb.co/kxmx5T/facebook_icon_2.png)](https://www.facebook.com/profile.php?id=100004768836692) &nbsp; &nbsp; [![N|Solid](https://image.ibb.co/gjgmzo/linkedin_icon_2.png)](https://www.linkedin.com/in/anatolii-lukavenko/) &nbsp; &nbsp; [![N|Solid](https://image.ibb.co/hsM8C8/cv_icon_2.png)](https://luancv.000webhostapp.com/) &nbsp; &nbsp; [![N|Solid](https://image.ibb.co/cw7UkT/mail_icon_2.png)](Anatolii.lukavenko@gmail.com)&nbsp; &nbsp; [![N|Solid](https://i.ibb.co/YLnMgNr/blog.png)](https://blogluan.000webhostapp.com/)&nbsp; &nbsp; [![N|Solid](https://i.ibb.co/K71YFpB/upwork.png)](https://www.upwork.com/o/profiles/users/_~0166e2e8e838bcaeff/)
 
 
  Anatolii.lukavenko@gmail.com
